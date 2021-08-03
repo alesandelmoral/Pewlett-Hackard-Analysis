@@ -68,7 +68,8 @@ GROUP BY me.tittle
 ORDER BY COUNT(me.emp_no) DESC;
 
 --Gender retirements
-SELECT e.emp_no,
+SELECT DISTINCT ON (e.emp_no)
+		e.emp_no,
 	   e.first_name,
 	   e.last_name,
 	   e.gender,
